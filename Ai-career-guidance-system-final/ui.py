@@ -116,26 +116,21 @@ def career_recommendations_ui(data):
 
 
 def Roadmap_file(roadmap):
-   
-    filename = doc.generate_roadmap_docx(roadmap)
-    if isinstance(filename, tuple): 
-        filename = filename[0]
-        
-    file_path = Path(__file__).parent / filename
-    
-    
+
+    file_data = doc.generate_roadmap_docx(roadmap)
+
     col1, col2, col3 = st.columns([1, 2, 1])
-    
-    with col2: 
-        with open(file_path, 'rb') as file:
-            st.download_button(
-                label="Download Roadmap",
-                data=file,
-                file_name=filename,
-                icon='🛣️',
-                use_container_width=True, 
-                type="primary"           
-            )
+
+    with col2:
+        st.download_button(
+            label="Download Roadmap",
+            data=file_data,
+            file_name="Roadmap.docx",
+            mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            icon="🛣️",
+            use_container_width=True,
+            type="primary"
+        )
 
 #not in use
 def startup_ui():
@@ -189,3 +184,4 @@ def review_from():
           st.write("Please take 1 minute to share your feedback.")
           st.link_button("Submit Review", "https://docs.google.com/forms/d/e/1FAIpQLSeHXw97lp68b3zhW417TXY-aVTvOYXKRTU9VVsrBMsIXjUL6Q/viewform?usp=publish-editor")
       
+
