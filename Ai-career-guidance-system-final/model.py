@@ -1,4 +1,4 @@
-import google.generativeai as genai
+from google import genai
 import json
 
 def Ai_Model(prompt, user_data,api,modell):
