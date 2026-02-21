@@ -1,4 +1,4 @@
-from google import genai
+import google.generativeai as genai
 import json
 
 def Ai_Model(prompt, user_data,api,modell):
@@ -47,6 +47,7 @@ def Ai_Model(prompt, user_data,api,modell):
             "status": "error",
             "message": msg
         }
+
 
 
 
