@@ -20,7 +20,7 @@ if st.session_state.get('user_data') and not st.session_state.get('ai_careers'):
            st.session_state['ai_careers']=model.Ai_Model(
                prompt_1,
                st.session_state['user_data'],
-               st.secrets['GEN_AI_API_1'],
+               st.secrets['GEN_AI_API_2'],
                modell="gemini-2.5-flash-lite"
                
            )
@@ -63,4 +63,5 @@ try:
             
 except Exception as er :
     st.error(f"Try after some time 4 {er}")
+
 
