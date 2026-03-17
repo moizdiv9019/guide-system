@@ -3,6 +3,14 @@ import ui
 import model
 from myprompts import prompt_1 ,prompt_2
 
+# Hide the "Hosted with Streamlit" footer
+hide_st_style = """
+            <style>
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
 
 for key in ['start','user_data','careers_ui','roadmap_ui','ai_careers','ai_roadmap','roadmap_doc','user_email','user_selected_career',]:
     if key not in st.session_state:
