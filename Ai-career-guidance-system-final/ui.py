@@ -41,8 +41,8 @@ def Roadmap_display(roadmap):
 
     
 def user_info_ui():  
-    st.header("AI Career Guidance System")
-    st.info("This website guides you in finding the correct path and mastering it.")
+    st.header("AI Career Guidance System 🎓")
+    st.info("Tell us about yourself to unlock your personalized career map.")
 
     # 1. Start the form
     with st.form(key="user_info_form"):
