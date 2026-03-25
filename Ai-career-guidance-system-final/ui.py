@@ -2,7 +2,14 @@ import streamlit as st
 import doc
 from  pathlib import Path
 
-
+st.markdown("""
+    <style>
+    /* Hides the 'Press Enter to apply' hint in all input widgets */
+    div[data-testid="InputInstructions"] {
+        display: none;
+    }
+    </style>
+    """, unsafe_allow_html=True)
 def Roadmap_display(roadmap):      
     st.header("🚀 Career Guidance: 6-months Roadmap")
     
@@ -40,15 +47,15 @@ def user_info_ui():
     # 1. Start the form
     with st.form(key="user_info_form"):
         # Define inputs inside the form
-        name = st.text_input("Enter your name",enter_to_submit=False)
-        email = st.text_input("Email ID",enter_to_submit=False)
-        education = st.text_input("Education level", placeholder='Diploma / UG / PG / Other',enter_to_submit=False)
-        branch = st.text_input("Stream or branch", placeholder='CSE / E&C / MECH / CIVIL / Other',enter_to_submit=False)
+        name = st.text_input("Enter your name")
+        email = st.text_input("Email ID")
+        education = st.text_input("Education level", placeholder='Diploma / UG / PG / Other')
+        branch = st.text_input("Stream or branch", placeholder='CSE / E&C / MECH / CIVIL / Other')
         skills = st.text_input("Skills")
         
         # Optional Fields
-        interest = st.text_input("🎯 Interests (Optional)", placeholder="e.g., Data Science",enter_to_submit=False)
-        about = st.text_area("📝 About You (Optional)", placeholder="Tell us more about your career goals...",enter_to_submit=False)
+        interest = st.text_input("🎯 Interests (Optional)", placeholder="e.g., Data Science")
+        about = st.text_area("📝 About You (Optional)", placeholder="Tell us more about your career goals...")
 
         # 2. Use st.form_submit_button instead of st.button
         submit_clicked = st.form_submit_button("Generate Guidance")
@@ -63,7 +70,7 @@ def user_info_ui():
           "interest": interest,
           "about": about
       }
-  
+     
       # 3. Logic only runs when the button is pressed
       if submit_clicked:
           required_fields = ["name", "email", "education", "branch", "skills"]
