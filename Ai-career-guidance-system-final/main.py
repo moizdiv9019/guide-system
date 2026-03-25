@@ -6,8 +6,8 @@ from myprompts import prompt_1 ,prompt_2
 
 
 st.set_page_config(
-    page_title="pathalign-ai",
-    page_icon="🤖",)
+    page_title="pathalign-Ai",
+    page_icon="🎓",)
 
 # Hide the "Hosted with Streamlit" footer\
 
