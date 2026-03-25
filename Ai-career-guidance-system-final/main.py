@@ -3,7 +3,13 @@ import ui
 import model
 from myprompts import prompt_1 ,prompt_2
 
-# Hide the "Hosted with Streamlit" footer
+
+
+st.set_page_config(
+    page_title="pathalign-ai",
+    page_icon="🤖",)
+
+# Hide the "Hosted with Streamlit" footer\
 
 hide_st_style = """
             <style>
@@ -13,6 +19,8 @@ hide_st_style = """
             </style>
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
+
+
 
 
 for key in ['start','user_data','careers_ui','roadmap_ui','ai_careers','ai_roadmap','roadmap_doc','user_email','user_selected_career',]:
