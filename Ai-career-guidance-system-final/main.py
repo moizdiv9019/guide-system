@@ -65,9 +65,13 @@ if st.session_state.get('user_data') and not st.session_state.get('ai_careers'):
     # Step 3 career selection
 if st.session_state.get('ai_careers'):
            if st.session_state['ai_careers']['status']=='success':
+            try:
               st.session_state['user_selected_career']=ui.career_recommendations_ui(
                   st.session_state['ai_careers']['data']
               )
+            except Exception as e:
+                st.error("Server error try again after same timee",icon='🚨')
+
 
            else:
                st.error(st.session_state['ai_careers']['message'],icon='🚨')
@@ -91,9 +95,12 @@ if st.session_state.get('user_selected_career') and not st.session_state.get('ai
 try:
     if st.session_state.get('ai_roadmap'):
         if st.session_state['ai_roadmap']['status']=='success':
+          try:
             ui.Roadmap_display(st.session_state['ai_roadmap']['data'])
             ui.Roadmap_file(st.session_state['ai_roadmap']['data'])
             ui.review_from()
+          except Exception as e:
+            st.error("Server error try again after same timee",icon='🚨')
 
         else:    
             st.error(st.session_state['ai_roadmap']['message'],icon='🚨')
