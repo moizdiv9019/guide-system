@@ -38,6 +38,7 @@ new_dimensions = (700, 300)
 # Resize the image
 resized_img = img.resize(new_dimensions)
 st.info("This website guides you in finding the correct path and mastering it.",icon='🎓')
+st.image(resized_img,use_container_width=False)
 
 
 for key in ['start','user_data','careers_ui','roadmap_ui','ai_careers','ai_roadmap','roadmap_doc','user_email','user_selected_career',]:
