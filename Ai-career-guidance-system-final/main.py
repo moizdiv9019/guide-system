@@ -71,7 +71,7 @@ if st.session_state.get('ai_careers'):
 
            else:
                st.error(st.session_state['ai_careers']['message'],icon='🚨')
-               st.stop()
+               st.session_state['ai_careers']=None
  
    # Step 4 roadmap
 if st.session_state.get('user_selected_career') and not st.session_state.get('ai_roadmap'):
@@ -96,7 +96,8 @@ try:
             ui.review_from()
 
         else:    
-            st.error(st.session_state['ai_roadmap']['message'])
+            st.error(st.session_state['ai_roadmap']['message'],icon='🚨')
+            st.session_state['ai_roadmap']=None
             
 except Exception as er :
     st.error(f"Try after some time 4 {er}")
