@@ -30,7 +30,7 @@ current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
 image_path = current_dir / "images" / "home page.png"
 
 # Open the image using PIL
-img = Image.open("images/home page.png")
+img = Image.open(image_path)
 
 # Define the new dimensions (e.g., 600 width, 400 height)
 new_dimensions = (700, 300)
