@@ -22,6 +22,12 @@ st.markdown(hide_st_style, unsafe_allow_html=True)
 
 
 from PIL import Image
+import os
+from pathlib import Path
+
+
+current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
+image_path = current_dir / "images" / "home page.png"
 
 # Open the image using PIL
 img = Image.open("images/home page.png")
