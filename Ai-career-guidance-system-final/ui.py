@@ -40,21 +40,22 @@ def Roadmap_display(roadmap):
 
 
     
-def user_info_ui():  
-    st.header("AI Career Guidance System 🎓")
-    st.info("Tell us about yourself to unlock your personalized career map.")
 
+def user_info_ui():  
+    # st.header("AI Career Guidance System")
+    col1,col2=st.columns(2)
     # 1. Start the form
     with st.form(key="user_info_form"):
         # Define inputs inside the form
-        name = st.text_input("Enter your name")
-        email = st.text_input("Email ID")
-        education = st.text_input("Education level", placeholder='Diploma / UG / PG / Other')
-        branch = st.text_input("Stream or branch", placeholder='CSE / E&C / MECH / CIVIL / Other')
-        skills = st.text_input("Skills")
-        
-        # Optional Fields
-        interest = st.text_input("🎯 Interests (Optional)", placeholder="e.g., Data Science")
+        with col1:
+            name = st.text_input("Enter your name ✨")
+            email = st.text_input("Email ID 📧",placeholder='Ram143@gmail.com')
+            interest = st.text_input("🎯 Interests (Optional)", placeholder="e.g., Data Science")
+        with col2:
+            branch = st.text_input("Stream or branch 🪺", placeholder='CSE / E&C / MECH / CIVIL / Other ')
+            skills = st.text_input("Skills 🐦‍🔥",placeholder='C++ , OOPS , DSA , OS ')
+            # Optional Fields
+            education = st.text_input("Education level 🏫", placeholder='Diploma / UG / PG / Other ')
         about = st.text_area("📝 About You (Optional)", placeholder="Tell us more about your career goals...")
 
         # 2. Use st.form_submit_button instead of st.button
@@ -70,7 +71,7 @@ def user_info_ui():
           "interest": interest,
           "about": about
       }
-     
+  
       # 3. Logic only runs when the button is pressed
       if submit_clicked:
           required_fields = ["name", "email", "education", "branch", "skills"]
@@ -81,7 +82,7 @@ def user_info_ui():
               return None # Return None if validation fails
           else:
               return user_data   
-      return user_data      
+      return user_data    
 
 
 def career_recommendations_ui(data):
