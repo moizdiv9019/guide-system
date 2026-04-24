@@ -2,6 +2,9 @@ import streamlit as st
 import ui
 import model
 from myprompts import prompt_1 ,prompt_2
+from PIL import Image
+import os
+from pathlib import Path
 
 
 
@@ -21,11 +24,6 @@ hide_st_style = """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
 
-from PIL import Image
-import os
-from pathlib import Path
-
-
 current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
 image_path = current_dir / "images" / "home page.png"
 
@@ -38,7 +36,7 @@ new_dimensions = (700, 300)
 # Resize the image
 resized_img = img.resize(new_dimensions)
 st.info("This website guides you in finding the correct path and mastering it.",icon='🎓')
-st.image(resized_img,use_container_width=False)
+st.image(resized_img,width='stretch')
 
 
 for key in ['start','user_data','careers_ui','roadmap_ui','ai_careers','ai_roadmap','roadmap_doc','user_email','user_selected_career',]:
